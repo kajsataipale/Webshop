@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Product\" />
+    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\banner1.svg" />

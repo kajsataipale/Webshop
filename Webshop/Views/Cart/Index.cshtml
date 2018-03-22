@@ -1,0 +1,14 @@
+﻿@model List<Webshop.Models.CartViewModel>
+@{
+    ViewData["Title"] = "Shop";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>Our Products</h3>
+
+  <div  class="CartPage">
+   @foreach(var cart in Model)
+    {
+        Html.RenderPartial("cart", cart);
+   
+    }
+  </div>

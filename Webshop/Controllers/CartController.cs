@@ -22,50 +22,50 @@ namespace Webshop.Controllers
 
         public ActionResult Index()
         {
-            List<CartViewModel> news;
+            List<CartViewModel> cart;
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                news = connection.Query<CartViewModel>("select * from Products").ToList();
+                cart = connection.Query<CartViewModel>("select * from Cart").ToList();
             }
 
-            return View(news);
+            return View(cart);
         }
 
-        public ActionResult Get(string id)
-        {
-            CartViewModel newsItem;
-            using (var connection = new MySqlConnection(this.connectionString))
-            {
-                newsItem = connection.QuerySingleOrDefault<CartViewModel>("select * from Products where id = @id",
-                    new { id });
-            }
+        //public ActionResult Get(string id)
+        //{
+        //    CartViewModel newsItem;
+        //    using (var connection = new MySqlConnection(this.connectionString))
+        //    {
+        //        newsItem = connection.QuerySingleOrDefault<CartViewModel>("select * from Products where id = @id",
+        //            new { id });
+        //    }
 
-            if (newsItem == null)
-            {
-                return NotFound();
-            }
+        //    if (newsItem == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(newsItem);
-        }
+        //    return View(newsItem);
+        //}
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public ActionResult Create(CartViewModel model)
-        {
-            using (var connection = new MySqlConnection(this.connectionString))
-            {
-                connection.Execute("insert into Products values(@id, @product_id, @cart_id)", new { model.Id, model.product_id,model.cart_id });
-            }
+        //[HttpPost]
+        //public ActionResult Create(CartViewModel model)
+        //{
+        //    using (var connection = new MySqlConnection(this.connectionString))
+        //    {
+        //        connection.Execute("insert into Products values(@id, @product_id, @cart_id)", new { model.Id, model.product_id,model.cart_id });
+        //    }
 
-            ViewBag.CreateMessage = "News item has been added successfully.";
+        //    ViewBag.CreateMessage = "News item has been added successfully.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
     }
 }

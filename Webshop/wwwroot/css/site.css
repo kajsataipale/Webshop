@@ -45,6 +45,11 @@ button {
     margin-top: 2%;
 }
 
+
+.CartPage {
+    display: flex;
+    flex-direction: column;
+}
 /* QR code generator */
 #qrCode {
     margin: 15px
