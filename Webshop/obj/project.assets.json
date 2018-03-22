@@ -12854,11 +12854,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kajsataipale/Projects/Webshop/Webshop/Webshop.csproj",
+      "projectUniqueName": "/Users/kajsataipale/Desktop/Webshop/Webshop/Webshop.csproj",
       "projectName": "Webshop",
-      "projectPath": "/Users/kajsataipale/Projects/Webshop/Webshop/Webshop.csproj",
+      "projectPath": "/Users/kajsataipale/Desktop/Webshop/Webshop/Webshop.csproj",
       "packagesPath": "/Users/kajsataipale/.nuget/packages/",
-      "outputPath": "/Users/kajsataipale/Projects/Webshop/Webshop/obj",
+      "outputPath": "/Users/kajsataipale/Desktop/Webshop/Webshop/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

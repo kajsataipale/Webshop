@@ -9,3 +9,14 @@
 /Users/kajsataipale/Projects/Webshop/Webshop/obj/Debug/netcoreapp2.0/Webshop.dll
 /Users/kajsataipale/Projects/Webshop/Webshop/obj/Debug/netcoreapp2.0/Webshop.pdb
 /Users/kajsataipale/Projects/Webshop/Webshop/obj/Debug/netcoreapp2.0/Webshop.csprojResolveAssemblyReference.cache
+/Users/kajsataipale/Desktop/Webshop/Webshop/bin/Debug/netcoreapp2.0/Webshop.deps.json
+/Users/kajsataipale/Desktop/Webshop/Webshop/bin/Debug/netcoreapp2.0/Webshop.runtimeconfig.json
+/Users/kajsataipale/Desktop/Webshop/Webshop/bin/Debug/netcoreapp2.0/Webshop.runtimeconfig.dev.json
+/Users/kajsataipale/Desktop/Webshop/Webshop/bin/Debug/netcoreapp2.0/Webshop.dll
+/Users/kajsataipale/Desktop/Webshop/Webshop/bin/Debug/netcoreapp2.0/Webshop.pdb
+/Users/kajsataipale/Desktop/Webshop/Webshop/obj/Debug/netcoreapp2.0/Webshop.csprojResolveAssemblyReference.cache
+/Users/kajsataipale/Desktop/Webshop/Webshop/obj/Debug/netcoreapp2.0/Webshop.csproj.CoreCompileInputs.cache
+/Users/kajsataipale/Desktop/Webshop/Webshop/obj/Debug/netcoreapp2.0/Webshop.AssemblyInfoInputs.cache
+/Users/kajsataipale/Desktop/Webshop/Webshop/obj/Debug/netcoreapp2.0/Webshop.AssemblyInfo.cs
+/Users/kajsataipale/Desktop/Webshop/Webshop/obj/Debug/netcoreapp2.0/Webshop.dll
+/Users/kajsataipale/Desktop/Webshop/Webshop/obj/Debug/netcoreapp2.0/Webshop.pdb
