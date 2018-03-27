@@ -3,40 +3,11 @@
     ViewData["Title"] = "Cart";
 }
 <h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
-<a href="/products"><button>Keep Shopping</button></a>
-<table class="cart">
-    <tr class="row" style="font-weight: bold;">
-            <td class=" ">
-            Product
-            </td>
-            <td class=" ">
-            Price
-             </td>
-            <td class=" ">
-           Number of products
-             </td>
-             <td class=" ">
-           
-             </td>
-@foreach(var product in Model)
+@foreach (var product in Model)
 {
-    <tr class="row mb-5">
-            <td>
-            @(Model.name) 
-            </td>
-            <td>
-            @(Model.price) $
-             </td>
-            <td>
-            <a class="btn btn-sm btn-danger" href="/Cart/remove/@(product.cart_item_id)">X</a>
-            </td>
-    </tr>
-    <br>
+    Html.RenderPartial("Cart", product);
 }
-</table>
-       
-        <br>
-    <a type="button" class="col-md-6 p-0 btn btn-lg btn-block btn-primary" href="/checkout" style="padding-left: 0px">Proceed to Checkout</a>
     <br>
+        <a type="button" class="col-md-6 p-0 btn btn-lg btn-block btn-primary" href="/checkout" style="padding-left: 0px">Proceed to Checkout</a>
     <br>
+  

@@ -11,8 +11,8 @@
         Price: @Model.Price :-
     @using (Html.BeginForm())
     {
-        @Html.HiddenFor(m=> m.Id)
-         <a href="/cart/add/@(Model.Id)"><button>Add To Cart</button></a>
+        @Html.HiddenFor(m=> m.product_id)
+         <a href="/cart/add/@(Model.product_id)"><button>Add To Cart</button></a>
       
     }
         </div>

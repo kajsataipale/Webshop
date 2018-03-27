@@ -23,26 +23,27 @@ namespace Webshop.Controllers
         public IActionResult Index()
         {
             //var cartId = Request.Cookies["CartID"];
-            List<CartViewModel> cart;             using (var connection = new MySqlConnection(this.connectionString))             {                 cart = connection.Query<CartViewModel>("select *, COUNT(product_id) AS amount FROM Cart JOIN Products ON Cart.product_id=Products.id WHERE cart_id = @cartId").ToList();             }              return View(cart);
-        }
-
-        [HttpGet]
-        public IActionResult Add(string id)
-        {
-            var cartId = Request.Cookies["CartID"];
-
-            using (var connection = new MySqlConnection(this.connectionString))
-            {
-
-                var addToCartQuery = "INSERT INTO Cart (product_id, cart_id) VALUES(@id, @cartId)";
-
-                connection.Execute(addToCartQuery, new { id, cartId });
-
+            List<CartViewModel> cart;             using (var connection = new MySqlConnection(this.connectionString))             {                 cart = connection.Query<CartViewModel>("select Cart.Id, Products.name, Products.price, Products.image from Cart INNER JOIN Products ON Cart.Id = Products.product_id").ToList();
             }
-            return RedirectToAction("Index");
 
+            return View(cart);
         }
+    
+        //[HttpGet]
+        //public IActionResult Add(string id)
+        //{
+        //    var cartId = Request.Cookies["CartID"];
 
+        //    using (var connection = new MySqlConnection(this.connectionString))
+        //    {
 
+        //        var addToCartQuery = "INSERT INTO Cart (product_id, cart_id) VALUES(@id, @cartId)";
+
+        //        connection.Execute(addToCartQuery, new { id, cartId });
+
+        //    }
+        //    return Redirect("/Checkout");
+
+        //}
     }
 }
