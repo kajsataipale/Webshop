@@ -20,5 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\banner1.svg" />
+    <Content Remove="Views\Home\Cart.cshtml" />
   </ItemGroup>
 </Project>
