@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Webshop.Models;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using Dapper;
 using MySql.Data.MySqlClient;
 
@@ -23,7 +23,7 @@ namespace Webshop.Controllers
         public IActionResult Index()
         {
             //var cartId = Request.Cookies["CartID"];
-            List<CartViewModel> cart;             using (var connection = new MySqlConnection(this.connectionString))             {                 cart = connection.Query<CartViewModel>("select Cart.Id, Products.name, Products.price, Products.image from Cart INNER JOIN Products ON Cart.Id = Products.product_id").ToList();
+            List<CartViewModel> cart;             using (var connection = new MySqlConnection(this.connectionString))             {                 cart = connection.Query<CartViewModel>("SELECT * FROM Products INNER JOIN Cart ON Products.product_id=Cart.product_id").ToList();
             }
 
             return View(cart);
