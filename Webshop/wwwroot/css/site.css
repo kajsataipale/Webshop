@@ -50,6 +50,11 @@ button {
     display: flex;
     flex-direction: column;
 }
+
+.CartImage {
+    width: 10%;
+    margin: 2%;
+}
 /* QR code generator */
 #qrCode {
     margin: 15px

@@ -23,7 +23,7 @@ namespace Webshop.Controllers
         public IActionResult Index()
         {
             //var cartId = Request.Cookies["CartID"];
-            List<CartViewModel> cart;             using (var connection = new MySqlConnection(this.connectionString))             {                 cart = connection.Query<CartViewModel>("SELECT * FROM Products INNER JOIN Cart ON Products.product_id=Cart.product_id").ToList();
+            List<CartViewModel> cart;             using (var connection = new MySqlConnection(this.connectionString))             {                 cart = connection.Query<CartViewModel>("SELECT * FROM Cart INNER JOIN Products ON Cart.product_id=Products.product_id").ToList();
             }
 
             return View(cart);

@@ -2,13 +2,19 @@
 @{
     ViewData["Title"] = "Products";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+
 
 <div class="Products">
-    @Model.name
-    <br />
-    @Model.price
-    <br />
-    <img src="~/images/@Model.image" alt="@Model.name" />
+
+
+<img class="CartImage" src="~/images/@Model.Image" alt="@Model.Name" />
+@Model.Name
+@Model.price :-     
+@using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m=> m.product_id)
+         <a href="/cart/add/@(Model.product_id)"><button>Remove From Cart</button></a>
+      
+    }
+
 </div>

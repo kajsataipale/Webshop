@@ -5,8 +5,9 @@ namespace Webshop.Models
     {
         public int Id { get; set; }
         public int product_id { get; set; }
-        public int image { get; set; }
-        public int amount { get; set; }
+        public string Image { get; set;  }
+        public string Name { get; set; }
+        //public int amount { get; set; }
         public int price { get; set; }
     }
 }
