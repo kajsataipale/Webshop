@@ -3,11 +3,21 @@
     ViewData["Title"] = "Checkout";
 }
 <h2>@ViewData["Title"]</h2>
-@foreach (var product in Model)
+@foreach(var product in Model)
 {
-    Html.RenderPartial("Checkout", product);
+    <li>@(product.name) - @(product.price) :-
+        <br>
+    </li>
 }
- @foreach (var product in Model)
-{
-    Html.RenderPartial("AddUser", product);
-}   
+@using (Html.BeginForm()){
+  <label class="form-group" for="name">Email</label>
+      <input class = "form-control" type="text" name="name" value="" required >
+      <br>
+    <label class="form-group" for="address">Address</label>
+      <input class = "form-control"  type="text" name="address" value="" required >
+      <br>
+     <label class="form-group" for="creditcard">Phone</label>
+      <input class = "form-control" type="number" name="creditcard" value="" required >
+      <br>
+    <button type="submit">Pay</button>
+    }

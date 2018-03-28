@@ -28,7 +28,7 @@ namespace Webshop.Controllers
             List<CheckoutViewModel> cart;
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                cart = connection.Query<CheckoutViewModel>("SELECT * FROM Cart INNER JOIN Products ON Cart.product_id=Products.product_id").ToList();
+                cart = connection.Query<CheckoutViewModel>("SELECT * FROM Cart JOIN Products ON Cart.product_id=Products.product_id").ToList();
             }
 
             return View(cart);
