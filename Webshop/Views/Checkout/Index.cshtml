@@ -1,0 +1,13 @@
+﻿@model List<Webshop.Models.CheckoutViewModel>
+@{
+    ViewData["Title"] = "Checkout";
+}
+<h2>@ViewData["Title"]</h2>
+@foreach (var product in Model)
+{
+    Html.RenderPartial("Checkout", product);
+}
+ @foreach (var product in Model)
+{
+    Html.RenderPartial("AddUser", product);
+}   
