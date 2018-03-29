@@ -12,8 +12,7 @@
     @using (Html.BeginForm())
     {
         @Html.HiddenFor(m=> m.product_id)
-         <a href="/cart/add/@(Model.product_id)"><button>Add To Cart</button></a>
-      
+         <button type="submit">Add To Cart</button>
     }
         </div>
     </div>

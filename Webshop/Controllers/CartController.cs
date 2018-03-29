@@ -28,22 +28,16 @@ namespace Webshop.Controllers
 
             return View(cart);
         }
-    
-        //[HttpGet]
-        //public IActionResult Add(string id)
-        //{
-        //    var cartId = Request.Cookies["CartID"];
 
-        //    using (var connection = new MySqlConnection(this.connectionString))
-        //    {
-
-        //        var addToCartQuery = "INSERT INTO Cart (product_id, cart_id) VALUES(@id, @cartId)";
-
-        //        connection.Execute(addToCartQuery, new { id, cartId });
-
-        //    }
-        //    return Redirect("/Checkout");
-
-        //}
+        [HttpPost]
+        public ActionResult Index(CartViewModel model)
+        {
+            string InsertSql = "DELETE FROM Cart WHERE product_id=@product_id";
+            using (var connection = new MySqlConnection(this.connectionString))
+            {
+                connection.Execute(InsertSql, new { product_id = model.product_id });
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

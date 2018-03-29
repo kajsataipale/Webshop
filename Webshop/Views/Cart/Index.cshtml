@@ -7,7 +7,15 @@
 {
     Html.RenderPartial("Cart", product);
 }
-    <br>
-        <a type="button" class="col-md-6 p-0 btn btn-lg btn-block btn-primary" href="/checkout" style="padding-left: 0px">Proceed to Checkout</a>
-    <br>
+@if (Model.Any()) {
+  <br>
+    <a type="button" class="col-md-6 p-0 btn btn-lg btn-block btn-primary" href="/checkout" style="padding-left: 0px">Proceed to Checkout</a>
+  <br>
+}
+else
+{
+<h1>Your cart is empty! :( </h1>
+<a type="button" class="col-md-6 p-0 btn btn-lg btn-block btn-primary" href="/Product" style="padding-left: 0px">Continue Shopping</a>
+}
+
   
