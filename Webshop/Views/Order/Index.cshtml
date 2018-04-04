@@ -1,16 +1,20 @@
-﻿@model List<Webshop.Models.OrderViewModel>
+﻿@model Webshop.Models.OrderViewModel
 @{
     ViewData["Title"] = "Order";
 }
 <h2>@ViewData["Title"]</h2>
-<h3>Thank You for Shopping</h3>
+<h3>Thank You for</h3>
 
   <div  class="ShopPage">
-   @foreach(var products in Model)
-    {
-        Html.RenderPartial("Order", products);
-   
-    }
+    <div>
+    @Model.user_name
+    <br>
+    @Model.Phone
+    <br> 
+    @Model.Adress
+    <br>
+    @Model.Email
+    </div>
   </div>
 
   

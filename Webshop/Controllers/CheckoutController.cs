@@ -34,21 +34,21 @@ namespace Webshop.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string user_name, string email, string phone, string adress)
+        public ActionResult Index(OrderViewModel model)
         {
             string AddCheckout = "INSERT INTO Checkout (user_name, email, phone, adress) VALUES (@user_name, @email, @phone, @adress)";
             using (var connection = new MySqlConnection(this.connectionString))
             {
                 connection.Execute(AddCheckout, new 
                 { 
-                    user_name = @user_name, 
-                    email = @email, 
-                    phone = @phone,
-                    adress = @adress
+                    user_name = model.user_name, 
+                    email = model.Email, 
+                    phone = model.Phone,
+                    adress = model.Adress
                 });
 
             }
-            return RedirectToAction("../Order");
+            return View("~/Views/Order/Index.cshtml", model);
         }
  
 

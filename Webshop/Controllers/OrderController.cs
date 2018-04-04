@@ -20,15 +20,15 @@ namespace Webshop.Controllers
             this.connectionString = configuration.GetConnectionString("ConnectionString");
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int order_id)
         {
-            List<OrderViewModel> product;
+            List<OrderViewModel> orderconfirmed;
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                product = connection.Query<OrderViewModel>("select * from Checkout").ToList();
+                orderconfirmed = connection.Query<OrderViewModel>("select * from Checkout where order_id=@order_id", new { order_id }).ToList();
             }
 
-            return View(product);
+            return View(orderconfirmed);
         }
     }
 }
