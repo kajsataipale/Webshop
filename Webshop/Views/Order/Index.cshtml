@@ -1,0 +1,18 @@
+﻿@model List<Webshop.Models.OrderViewModel>
+@{
+    ViewData["Title"] = "Order";
+}
+<h2>@ViewData["Title"]</h2>
+@foreach(var product in Model)
+{
+    <li>
+    @Model.Name
+    <br>
+    @Model.Phone
+    <br> 
+    @Model.Adress
+    </li>
+}
+
+
+  

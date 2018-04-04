@@ -35,6 +35,7 @@ namespace Webshop.Controllers
             using (var connection = new MySqlConnection(this.connectionString))
             {
                 connection.Execute(InsertSql, new { product_id = model.product_id });
+               
             }
             return RedirectToAction("Index");
         }

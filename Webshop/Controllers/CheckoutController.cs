@@ -24,7 +24,6 @@ namespace Webshop.Controllers
 
         public IActionResult Index()
         {
-            //var cartId = Request.Cookies["CartID"];
             List<CheckoutViewModel> cart;
             using (var connection = new MySqlConnection(this.connectionString))
             {
@@ -32,6 +31,24 @@ namespace Webshop.Controllers
             }
 
             return View(cart);
+        }
+
+        [HttpPost]
+        public ActionResult Index(string user_name, string email, string phone, string adress)
+        {
+            string AddCheckout = "INSERT INTO Checkout (user_name, email, phone, adress) VALUES (@user_name, @email, @phone, @adress)";
+            using (var connection = new MySqlConnection(this.connectionString))
+            {
+                connection.Execute(AddCheckout, new 
+                { 
+                    user_name = @user_name, 
+                    email = @email, 
+                    phone = @phone,
+                    adress = @adress
+                });
+
+            }
+            return RedirectToAction("../Order");
         }
  
 

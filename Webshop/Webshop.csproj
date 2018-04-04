@@ -18,6 +18,7 @@
     <Folder Include="Views\Product\" />
     <Folder Include="Views\Cart\" />
     <Folder Include="Views\Checkout\" />
+    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\banner1.svg" />

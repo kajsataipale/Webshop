@@ -8,16 +8,26 @@
     <li>@(product.name) - @(product.price) :-
         <br>
     </li>
+
 }
-@using (Html.BeginForm()){
-  <label class="form-group" for="name">Email</label>
-      <input class = "form-control" type="text" name="name" value="" required >
+
+ @using (Html.BeginForm())
+    {
+  <label class="form-group" for="name">Name</label>
+       
+      <input class = "form-control" type="text" name="user_name" value="" required >
+      <br>
+  <label class="form-group" for="email">Email</label>
+
+      <input class = "form-control" type="text" name="email" value="" required >
       <br>
     <label class="form-group" for="address">Address</label>
-      <input class = "form-control"  type="text" name="address" value="" required >
+   
+      <input class = "form-control"  type="text" name="adress" value="" required >
       <br>
-     <label class="form-group" for="creditcard">Phone</label>
-      <input class = "form-control" type="number" name="creditcard" value="" required >
+     <label class="form-group" for="phone">Phone</label>
+    
+      <input class = "form-control" type="number" name="phone" value="" required >
       <br>
     <button type="submit">Pay</button>
     }

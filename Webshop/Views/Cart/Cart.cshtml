@@ -3,7 +3,7 @@
     ViewData["Title"] = "Products";
 }
 
-
+<li>
 <div class="Products">
    
     <img class="CartImage" src="~/images/@Model.Image" alt="@Model.Name" />   
@@ -15,7 +15,9 @@
 @using (Html.BeginForm())
     {
         @Html.HiddenFor(m=> m.product_id)
-         <a href="/cart/add/@(Model.product_id)"><button>Remove From Cart</button></a>
+        @Html.HiddenFor(m=> m.price)
+         <button type="submit">Remove From Cart</button>
       
     }
 </div>
+</li>

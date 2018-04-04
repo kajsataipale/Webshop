@@ -9,6 +9,7 @@ namespace Webshop.Models
         public string Name { get; set; }
         //public int amount { get; set; }
         public int price { get; set; }
+        public int product_price { get; set; }
         public int Quantity { get; set; }
     }
 }
