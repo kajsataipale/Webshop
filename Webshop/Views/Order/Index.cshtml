@@ -3,16 +3,14 @@
     ViewData["Title"] = "Order";
 }
 <h2>@ViewData["Title"]</h2>
-@foreach(var product in Model)
-{
-    <li>
-    @Model.Name
-    <br>
-    @Model.Phone
-    <br> 
-    @Model.Adress
-    </li>
-}
+<h3>Thank You for Shopping</h3>
 
+  <div  class="ShopPage">
+   @foreach(var products in Model)
+    {
+        Html.RenderPartial("Order", products);
+   
+    }
+  </div>
 
   
