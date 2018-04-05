@@ -14,6 +14,35 @@ namespace Webshop.Unittest
     public class ProductServiceTests
     {
         private ProductService productService;
-        private ProductRepository productRepository;
+        private IProductRepository productRepository;
+
+
+
+        [SetUp]
+        public void SetUp()
+        {
+            this.productRepository = A.Fake<IProductRepository>();
+
+            this.productService = new ProductService(this.productRepository);
+        }
+
+        [Test]
+        public void GetAll_ReturnsExpectedProducts()
+        {
+            // Arrange
+            var products = new List<ProductModel>
+            {
+                new ProductModel { product_id = 37 }
+            };
+
+           
+            A.CallTo(() => this.productRepository.GetAll()).Returns(products);
+
+            // Act
+            var result = this.productService.GetAll();
+
+            // Assert
+            Assert.That(result, Is.EqualTo(products));
+        }
     }
 }

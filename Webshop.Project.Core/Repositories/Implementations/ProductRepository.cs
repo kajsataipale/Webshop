@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Webshop.Project.Core.Repositories.Implementations
 {
-    public class ProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly string connectionString;
 
