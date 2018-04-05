@@ -8,35 +8,35 @@ using Webshop.Models;
 //using System.Data.SqlClient;
 using Dapper;
 using MySql.Data.MySqlClient;
+using Webshop.Project.Core.Servies.Implementations;
+using Webshop.Project.Core.Models;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Webshop.Project.Core.Repositories.Implementations;
 
 namespace Webshop.Controllers
 {
     public class CartController : Controller
     {
+        private CartService cartService;
         private readonly string connectionString;
 
         public CartController(IConfiguration configuration)
         {
             this.connectionString = configuration.GetConnectionString("ConnectionString");
+
+            cartService = new CartService(new CartRepository(this.connectionString));
         }
 
         public IActionResult Index()
         {
-            List<CartViewModel> cart;             using (var connection = new MySqlConnection(this.connectionString))             {                 cart = connection.Query<CartViewModel>("SELECT * FROM Cart INNER JOIN Products ON Cart.product_id=Products.product_id").ToList();
-            }
-
+            List<CartModel> cart;             cart = cartService.GetCart();
             return View(cart);
         }
 
         [HttpPost]
-        public ActionResult Index(CartViewModel model)
+        public ActionResult Index(CartModel model)
         {
-            string InsertSql = "DELETE FROM Cart WHERE product_id=@product_id";
-            using (var connection = new MySqlConnection(this.connectionString))
-            {
-                connection.Execute(InsertSql, new { product_id = model.product_id });
-               
-            }
+            this.cartService.DeleteFromCart(model);
             return RedirectToAction("Index");
         }
     }

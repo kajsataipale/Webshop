@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 using Webshop.Models;
+using Webshop.Project.Core.Models;
+using Webshop.Project.Core.Repositories.Implementations;
+using Webshop.Project.Core.Servies.Implementations;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,18 +18,20 @@ namespace Webshop.Controllers
     {
         private readonly string connectionString;
 
+        private OrderService orderService;
+
         public OrderController(IConfiguration configuration)
         {
             this.connectionString = configuration.GetConnectionString("ConnectionString");
+
+            orderService = new OrderService(new OrderRepository(this.connectionString));
+
         }
 
         public ActionResult Index(int order_id)
         {
-            List<OrderViewModel> orderconfirmed;
-            using (var connection = new MySqlConnection(this.connectionString))
-            {
-                orderconfirmed = connection.Query<OrderViewModel>("select * from Checkout where order_id=@order_id", new { order_id }).ToList();
-            }
+            List<OrderModel> orderconfirmed;
+            orderconfirmed = orderService.ReturnOrder(order_id);
 
             return View(orderconfirmed);
         }

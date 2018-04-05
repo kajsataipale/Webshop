@@ -1,2 +1,2 @@
-﻿@model List<Webshop.Models.ProductViewModel> @{     ViewData["Title"] = "Shop"; } <h2>@ViewData["Title"]</h2> <h3>Our Products</h3>    <div  class="ShopPage">    @foreach(var products in Model)     {         Html.RenderPartial("product", products);         }
+﻿@model List<Webshop.Project.Core.Models.ProductModel> @{     ViewData["Title"] = "Shop"; } <h2>@ViewData["Title"]</h2> <h3>Our Products</h3>    <div  class="ShopPage">    @foreach(var products in Model)     {         Html.RenderPartial("product", products);         }
   </div>

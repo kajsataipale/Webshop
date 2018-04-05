@@ -1,4 +1,4 @@
-﻿@model CartViewModel
+﻿@model CartModel
 @{
     ViewData["Title"] = "Products";
 }
@@ -14,7 +14,7 @@
    
 @using (Html.BeginForm())
     {
-        @Html.HiddenFor(m=> m.product_id)
+        @Html.HiddenFor(m=> m.Id)
         @Html.HiddenFor(m=> m.price)
          <button type="submit">Remove From Cart</button>
       

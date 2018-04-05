@@ -24,4 +24,7 @@
     <Content Remove="wwwroot\images\banner1.svg" />
     <Content Remove="Views\Home\Cart.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Webshop.Project.Core\Webshop.Project.Core.csproj" />
+  </ItemGroup>
 </Project>
