@@ -16,8 +16,6 @@ namespace Webshop.Unittest
         private ProductService productService;
         private IProductRepository productRepository;
 
-
-
         [SetUp]
         public void SetUp()
         {

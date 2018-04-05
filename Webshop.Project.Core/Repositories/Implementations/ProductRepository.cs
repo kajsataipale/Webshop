@@ -16,7 +16,8 @@ namespace Webshop.Project.Core.Repositories.Implementations
             this.connectionString = connectionString;
         }
 
-        public List<ProductModel> GetAll(){
+        public List<ProductModel> GetAll()
+        {
             using (var connection = new MySqlConnection(this.connectionString))
             {
                 return connection.Query<ProductModel>("select * from Products").ToList();

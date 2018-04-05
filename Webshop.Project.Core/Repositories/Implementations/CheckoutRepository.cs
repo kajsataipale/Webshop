@@ -24,7 +24,8 @@ namespace Webshop.Project.Core.Repositories.Implementations
         }
 
 
-        public void InsertToCheckout(OrderModel model){
+        public void InsertToCheckout(OrderModel model)
+        {
             string AddCheckout = "INSERT INTO Checkout (user_name, email, phone, adress) VALUES (@user_name, @email, @phone, @adress)";
             using (var connection = new MySqlConnection(this.connectionString))
             {
