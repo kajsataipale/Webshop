@@ -32,7 +32,7 @@ namespace Webshop.Controllers
 
         public IActionResult Index()
         {
-            CheckoutModel cart;
+            CheckoutModel cart = new CheckoutModel();
            
             cart.product = checkoutService.GetCheckout();
 
@@ -40,7 +40,7 @@ namespace Webshop.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(CheckoutModel model)
+        public ActionResult Index(OrderModel model)
         {
             this.checkoutService.InsertToCheckout(model);
 
