@@ -26,7 +26,7 @@ namespace Webshop.Project.Core.Repositories.Implementations
         }
         public void InsertIntoCart(ProductModel model)
         {
-            string InsertSql = "INSERT INTO Cart (product_id, price) VALUES (@product_id, @price)";
+            string InsertSql = "INSERT INTO Cart (product_id,amount, price) VALUES (@product_id, 1, @price)";
             using (var connection = new MySqlConnection(this.connectionString))
             {
                 connection.Execute(InsertSql, new { product_id = model.product_id, price = model.Price });

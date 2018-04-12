@@ -1,15 +1,35 @@
 ﻿@model List<Webshop.Project.Core.Models.CartModel>
 @{
     ViewData["Title"] = "Cart";
+    decimal totalPrice =0;
+  
 }
 <h2>@ViewData["Title"]</h2>
 <ul>
 @foreach (var product in Model)
 {
+    totalPrice += @product.Amount * @product.price;
    
-    Html.RenderPartial("Cart", product);
+   <li>
+<div class="Products">
+   
+    <img class="CartImage" src="~/images/@product.Image" alt="@product.Name" />   
+
+@product.Name
+@product.price :-
+
+   
+@using (Html.BeginForm())
+    {
+         Html.RenderPartial("Cart", product);
+  
+    }
+       
+</div>
+</li>
    
 }
+    <h3> Total price: @totalPrice :-</h3>
 </ul>
 @if (Model.Any()) {
   <br>

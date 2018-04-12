@@ -1,23 +1,9 @@
 ﻿@model CartModel
 @{
     ViewData["Title"] = "Products";
-}
 
-<li>
-<div class="Products">
-   
-    <img class="CartImage" src="~/images/@Model.Image" alt="@Model.Name" />   
+}   
 
-@Model.Name
-@Model.price :-
-
-   
-@using (Html.BeginForm())
-    {
-        @Html.HiddenFor(m=> m.Id)
+     @Html.HiddenFor(m=> m.Id)
         @Html.HiddenFor(m=> m.price)
          <button type="submit">Remove From Cart</button>
-      
-    }
-</div>
-</li>
