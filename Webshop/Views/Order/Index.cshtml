@@ -3,17 +3,17 @@
     ViewData["Title"] = "Order";
 }
 
-<h3>Thank You for ordering</h3>
+<h3>Thank You for ordering!</h3>
 
   <div  class="OrderPage">
     <div>
-    @Model.user_name
-    <br>
-    @Model.Phone
-    <br> 
-    @Model.Adress
-    <br>
-    @Model.Email
+    <h4>Name : @Model.user_name</h4>
+
+    <h4>Email : @Model.Email</h4>
+
+    <h4>Adress :  @Model.Adress</h4>
+
+    <h4>Number :  @Model.Phone</h4>
     </div>
   </div>
 

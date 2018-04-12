@@ -23,6 +23,8 @@
   <ItemGroup>
     <Content Remove="wwwroot\images\banner1.svg" />
     <Content Remove="Views\Home\Cart.cshtml" />
+    <Content Remove="Views\Checkout\AddUser.cshtml" />
+    <Content Remove="Views\Order\Order.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Webshop.Project.Core\Webshop.Project.Core.csproj" />

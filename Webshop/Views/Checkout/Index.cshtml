@@ -1,10 +1,12 @@
 ﻿@model Webshop.Project.Core.Models.CheckoutModel
 @{
     ViewData["Title"] = "Checkout";
+    decimal totalPrice =0;
 }
 <h2>@ViewData["Title"]</h2>
 @foreach(var product in Model.product)
 {
+     totalPrice += @product.Amount * @product.Price;
     <li>@(product.Name) - @(product.Price) :-
         <br>
     </li>
@@ -13,6 +15,7 @@
 
  @using (Html.BeginForm())
     {
+
   <label class="form-group" for="name">Name</label>
        
       <input class = "form-control" type="text" name="user_name" value="" required >
@@ -29,5 +32,7 @@
     
       <input class = "form-control" type="number" name="Phone" value="" required >
       <br>
+
+      <h3> Total price: @totalPrice :-</h3>
     <button type="submit">Pay</button>
     }
