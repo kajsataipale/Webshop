@@ -17,5 +17,9 @@ namespace Webshop.Project.Core.Servies.Implementations
         {
             return orderRepository.ReturnOrder(order_id);
         }
+        public List<OrderModel> GetOrder()
+        { 
+            return orderRepository.GetOrder();
+        }
     }
 }

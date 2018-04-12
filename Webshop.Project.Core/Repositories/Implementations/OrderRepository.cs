@@ -22,5 +22,13 @@ namespace Webshop.Project.Core.Repositories.Implementations
                 return connection.Query<OrderModel>("select * from Checkout where order_id=@order_id", new { order_id}).ToList();
             }
         }
+
+        public List<OrderModel> GetOrder()
+        {
+            using (var connection = new MySqlConnection(this.connectionString))
+            {
+                return connection.Query<OrderModel>("SELECT * FROM Cart JOIN Products ON Cart.product_id=Products.product_id").ToList();
+            }
+        }
     }
 }
