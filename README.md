@@ -1,7 +1,7 @@
 # Webshop
 ## Part of a course in C# @ YRGO Göteborg
 
-<img src="https://media.giphy.com/media/12IVCL4sQBEngQ/giphy.gif" alt="Star Wars is cool" width="100%">
+<img src="https://media.giphy.com/media/3ov9jSVZW5EkTUnzeE/source.gif" alt="Star Wars is cool" width="100%">
 
 ## Assignment:
 Create a webshop only using C# as backend language. 
