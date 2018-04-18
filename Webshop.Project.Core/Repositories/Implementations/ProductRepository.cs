@@ -24,12 +24,12 @@ namespace Webshop.Project.Core.Repositories.Implementations
             }
         
         }
-        public void InsertIntoCart(ProductModel model)
+        public void InsertIntoCart(ProductModel model, string cart_id)
         {
-            string InsertSql = "INSERT INTO Cart (product_id,amount, price) VALUES (@product_id, 1, @price)";
+            string InsertSql = "INSERT INTO Cart (product_id,amount, price, cart_id) VALUES (@product_id, 1, @price, @cart_id)";
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                connection.Execute(InsertSql, new { product_id = model.product_id, price = model.Price });
+                connection.Execute(InsertSql, new { product_id = model.product_id, price = model.Price, cart_id = cart_id });
 
             }
 

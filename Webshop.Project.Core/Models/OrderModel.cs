@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Webshop.Project.Core.Models
 {
@@ -9,8 +10,6 @@ namespace Webshop.Project.Core.Models
         public string Adress { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public int Amount { get; set; }
-        public int Price { get; set; }
-        public string Name { get; set; }
+        public string cart_id { get; set; }
     }
 }

@@ -10,6 +10,6 @@ namespace Webshop.Project.Core.Models
         public int Amount { get; set; }
         public int price { get; set; }
         public int product_price { get; set; }
-        public int Quantity { get; set; }
+        public string cart_id { get; set; }
     }
 }

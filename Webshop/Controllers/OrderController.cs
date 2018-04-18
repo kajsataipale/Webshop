@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
@@ -19,19 +21,25 @@ namespace Webshop.Controllers
         private readonly string connectionString;
 
         private OrderService orderService;
+        private CheckoutService checkoutService;
 
         public OrderController(IConfiguration configuration)
         {
             this.connectionString = configuration.GetConnectionString("ConnectionString");
 
             orderService = new OrderService(new OrderRepository(this.connectionString));
+            checkoutService = new CheckoutService(new CheckoutRepository(this.connectionString));
 
         }
 
-        public ActionResult Index(int order_id)
+        public ActionResult Index( )
         {
-            List<OrderModel> orderconfirmed;
-            orderconfirmed = orderService.ReturnOrder(order_id);
+            var cookie = Request.Cookies["cart_id"];
+            Response.Cookies.Append("cart_id", "", new CookieOptions { Expires = DateTime.Now.AddDays(-1) });
+
+            CheckoutModel orderconfirmed = new CheckoutModel();
+            orderconfirmed.order = orderService.ReturnOrder(cookie);
+            orderconfirmed.product = checkoutService.GetCheckout(cookie);
 
             return View(orderconfirmed);
         }

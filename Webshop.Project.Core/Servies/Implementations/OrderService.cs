@@ -13,9 +13,9 @@ namespace Webshop.Project.Core.Servies.Implementations
             this.orderRepository = orderRepository;
         }
 
-        public List<OrderModel> ReturnOrder(int order_id)
+        public OrderModel ReturnOrder(string cart_id)
         {
-            return orderRepository.ReturnOrder(order_id);
+            return orderRepository.ReturnOrder(cart_id);
         }
         public List<OrderModel> GetOrder()
         { 

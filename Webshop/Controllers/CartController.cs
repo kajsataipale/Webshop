@@ -29,7 +29,8 @@ namespace Webshop.Controllers
 
         public IActionResult Index()
         {
-            List<CartModel> cart;             cart = cartService.GetCart();
+            var cookie = Request.Cookies["cart_id"];
+            List<CartModel> cart;             cart = cartService.GetCart(cookie);
             return View(cart);
         }
 

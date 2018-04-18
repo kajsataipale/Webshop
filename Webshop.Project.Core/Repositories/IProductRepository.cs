@@ -8,6 +8,6 @@ namespace Webshop.Project.Core.Repositories
     {
          List<ProductModel> GetAll();
 
-         void InsertIntoCart(ProductModel model);
+         void InsertIntoCart(ProductModel model, string cart_id);
     }
 }

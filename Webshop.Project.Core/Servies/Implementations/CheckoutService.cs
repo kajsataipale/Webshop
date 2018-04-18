@@ -13,9 +13,9 @@ namespace Webshop.Project.Core.Servies.Implementations
             this.checkoutRepository = checkoutRepository;
         }
 
-        public List<ProductModel> GetCheckout()
+        public List<ProductModel> GetCheckout(string cart_id)
         {
-            return checkoutRepository.GetCheckout();
+            return checkoutRepository.GetCheckout(cart_id);
         }
 
         public void InsertToCheckout(OrderModel model)

@@ -13,9 +13,9 @@ namespace Webshop.Project.Core.Servies.Implementations
             this.cartRepository = cartRepository;
         }
 
-        public List<CartModel> GetCart()
+        public List<CartModel> GetCart(string cart_id)
         { 
-            return cartRepository.GetCart();
+            return cartRepository.GetCart(cart_id);
         }
 
         public void DeleteFromCart(CartModel model)

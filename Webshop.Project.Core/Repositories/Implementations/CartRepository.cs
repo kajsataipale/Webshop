@@ -15,11 +15,11 @@ namespace Webshop.Project.Core.Repositories.Implementations
         {
             this.connectionString = connectionString;
         }
-        public List<CartModel> GetCart()
+        public List<CartModel> GetCart(string cart_id)
         {
             using (var connection = new MySqlConnection(this.connectionString))
             {
-                   return connection.Query<CartModel>("SELECT * FROM Cart INNER JOIN Products ON Cart.product_id=Products.product_id").ToList();
+                return connection.Query<CartModel>("SELECT * FROM Cart INNER JOIN Products ON Cart.product_id=Products.product_id WHERE cart_id=@cart_id", new{ cart_id=cart_id }).ToList();
             }
         }
         public void DeleteFromCart(CartModel model)

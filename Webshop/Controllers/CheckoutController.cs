@@ -32,9 +32,10 @@ namespace Webshop.Controllers
 
         public IActionResult Index()
         {
+            var cookie = Request.Cookies["cart_id"];
             CheckoutModel cart = new CheckoutModel();
            
-            cart.product = checkoutService.GetCheckout();
+            cart.product = checkoutService.GetCheckout(cookie);
 
             return View(cart);
         }
@@ -42,9 +43,11 @@ namespace Webshop.Controllers
         [HttpPost]
         public ActionResult Index(OrderModel model)
         {
+            model.cart_id = Request.Cookies["cart_id"];
             this.checkoutService.InsertToCheckout(model);
 
-            return View("~/Views/Order/Index.cshtml", model);
+            //return View("~/Views/Order/Index.cshtml", model);
+            return RedirectToAction("Index", "Order");
         }
  
 

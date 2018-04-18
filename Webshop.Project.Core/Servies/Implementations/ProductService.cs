@@ -19,9 +19,9 @@ namespace Webshop.Project.Core.Servies.Implementations
             return productRepository.GetAll();
         }
 
-        public void InsertIntoCart(ProductModel model)
+        public void InsertIntoCart(ProductModel model, string cart_id)
         {
-            productRepository.InsertIntoCart(model);
+            productRepository.InsertIntoCart(model, cart_id);
         }
     }
 }
