@@ -23,5 +23,5 @@ Create a webshop only using C# as backend language.
 - Kajsa Taipale
 
 ### Tested by:
-- 
-- 
+- Henrik Bielsten
+ 
