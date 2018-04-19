@@ -4,17 +4,15 @@
     decimal totalPrice =0;
 }
 
-<h3>Thank You for ordering!</h3>
+<h3>Thank You for ordering @Model.order.user_name!</h3>
 
   <div  class="OrderPage">
     <div>
-    <h4>Name : @Model.order.user_name</h4>
-
     <h4>Email : @Model.order.Email</h4>
 
     <h4>Adress :  @Model.order.Adress</h4>
 
-    <h4>Number :  @Model.order.Phone</h4>
+    <h4>Phone :  @Model.order.Phone</h4>
     </div>
     <ul>
      @foreach(var product in Model.product)
